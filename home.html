@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rajeshkumar</title>
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="header">
+        <a class="logo">Portfolio</a>
+
+
+        <nav class="navbar">
+           <a href="#home">Home</a>
+           <a href="#projects">Projects</a>
+           <a href="#experiance">Experiance</a>
+           <a href="#resume">Resume</a>
+           <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+    <!-- Home section -->
+    <section class="home" id="home">
+
+        <div class="details">
+            <p class="t1">
+                I am,
+            </p>
+            <p class="t2">
+                Rajeshkumar 
+            </p>
+            <p class="desc">
+                UI/UX  |   FrontEnd   |   FullStack
+            </p>
+            <button class="cta" onclick="ScrollToElement('contact')">
+                Contact Me
+            </button>
+        </div>
+
+        <div class="person">
+            <img class="person-img" src="./images\Rajeshimg.jpg" onclick="ScrollToElement('contact')" alt="RajeshImage">
+        </div>
+
+    </section>
+    <script src="home.js"></script>
+
+    <!-- PROJECT SECTION-->
+    <section class="projects" id="projects">
+        <div class="section-title">
+            <p> 
+                Projects
+            <p>
+        </div>
+        <div class="miniproject">
+            <p class="m-head">
+                MiniProject
+            </p>
+
+            <div class="miniproject-border">
+
+            <p class="p-head">
+                Dairy Greens
+            </p>
+                <img class="p-logo" src="./images/dairy greens.jpg" alt="DairyGreens LOGO">
+            
+            </div>
+            <p class="p-desc" href="#">
+                A website for Local farmers to Showcase and Sell their Dairy & Farm Products 
+                to reduce brokerage and More profits to Farmers And It removes the barrier between the Farmer and Customer.
+            </p>
+            
+        </div>
+<!--   -->
+        <div class="project">
+            <p class="m-head">
+                Project
+            </p>
+
+            <div class="miniproject-border">
+
+                <p class="p-head">
+                    <!-- -->
+                </p>
+                    <img class="p-logo" src="#" alt="LOGO">
+                
+                </div>
+                <p class="p-desc" href="#">
+                   
+                </p>       
+        </div>
+    </section>
+
+    <!-- Experiance -->
+    <section class="experiances" id="experiance">
+
+        <h1 class="section-title">Experiance</h1>
+
+        <div class="section-child">
+
+            <div class="experiance">
+
+                <i class="fa-solid fa-laptop icon"></i>
+
+                <h2>Making Minds</h2>
+
+                <p>HTML  .  CSS  .  JavaScript</p>
+
+                <p class="service-text">
+                    From : Jan 2024 - Still.
+                </p>
+
+                </div>
+                </div>
+
+
+            
+            <div class="section-child">
+            
+                 <div class="experiance">
+            
+                    <i class="fa-brands fa-app-store-ios icon"></i>
+            
+                    <h2>Techie</h2>
+            
+                    <p>Flutter . Andriod Development  . App </p>
+            
+                    <p class="service-text">
+                       From : Sep 2023 - Still.
+                    </p>
+                 </div>
+                 </div>       
+
+    </section>
+
+<!-- RESUME-->
+
+<section class="resume" id="resume">
+    <h1 class="section-title">Resume</h1>
+    <div class="resume-div">
+        <img class="resume-img" src="./images/Resume.jpg" alt="Resume"> 
+    </div>
+
+    <div class="resume-txt">
+        <p class="t1">
+            I am Rajeshkumar,
+        </p>
+        <p class="t2">
+            Click! 
+        </p>
+        <p class="desc">
+            To See Resume
+        </p>
+        <button class="cta" onclick="resumelink()">
+            Resume
+        </button>
+    </div>
+</section>
+
+<!-- Contact-->
+
+    <section class="contact" id="contact">
+        <h1 class="section-title">Contact </h1>
+        <div class="contact-form">
+            <form action="mailto:rajeshkumarponnudurai@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send</button>
+            </form>
+        </div>
+</section>
+
+<!--FOOTER-->
+
+<!-- Other content of your page -->
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h2 class="logo-text">My Portfolio</h2>
+            <p>
+                I am Rajeshkumar, a passionate web developer. Welcome to my portfolio. Feel free to explore and contact me for any projects or collaborations.
+            </p>
+            <div class="contact">
+                <span><i class="fas fa-phone"></i> &nbsp; +917825912494</span>
+                <span><i class="fas fa-envelope"></i> &nbsp; rajeshkumarponnudurai@gmail.com</span>
+            </div>
+        </div>
+
+        <div class="footer-section links">
+            <h2 class="logo-text">Quick Links</h2>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section social">
+            <h2 class="logo-text">Social Media</h2>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/rajeshkumar-ponnudurai-139a8228b/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Rajeshkumar-Ponnudurai" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://wa.me/917825912494?text=Hello%2C%20I%20would%20like%20to%20get%20more%20information" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/rajzx_kmr?igsh=OHY3cjNvdzl0bDRj" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <a href="." target="_blank">
+    <!-- Decorative line -->
+    <div class="decorative-line"></div>
+
+    <div class="footer-bottom">
+        <div>
+            &copy; 2024 My Portfolio. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+
+
+</body>
+</html>
