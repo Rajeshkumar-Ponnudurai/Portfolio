@@ -9,6 +9,13 @@ function ScrollToElement(elementId) {
 }
 
 function resumelink() {
-    const googleDriveLink = "https://drive.google.com/file/d/1rsMNdja8uMiFIuW6FCtc2evAqsd8kTed/view?usp=drive_link"; 
+    const googleDriveLink = "https://drive.google.com/file/d/1qYGJxoO0z2E3bfn60oMzTgLNZXyoP6L6/view?usp=drive_link"; 
     window.open(googleDriveLink, '_blank');
 }
+
+const menuIcon = document.getElementById('menu-icon');
+const navbar = document.getElementById('navbar');
+
+menuIcon.addEventListener('click', () => {
+    navbar.classList.toggle('open');
+});

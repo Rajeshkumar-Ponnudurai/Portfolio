@@ -47,7 +47,7 @@ section{
 
 .logo 
 {
-    width: 15%;
+    width: auto;
     height: 70px;
     /* background-color: yellow; */
     display: flex;
@@ -94,96 +94,146 @@ section{
 
 
 /* Home CSS  */
-
-.home
-{
+.home {
     width: 100%;
-    height: 700px;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 30px;
+    max-width: 1400px; /* Ensures it doesn't stretch too wide */
+    height: auto; /* Adjusts height based on content */
+    padding: 50px 10%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    gap: 50px; /* Adds spacing between text & image */
 }
 
-span{
-    color: var(--bg-color);
-}
-
-.details 
-{
-    width: 60%;
-    padding: 20px;
-    /* background-color: white; */
-    font-family: 'Montserrat', sans-serif;
+/* Text Section */
+.details {
+    width: 50%;
+    max-width: 600px; /* Prevents text from being too wide */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     row-gap: 15px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.t1 
-{
-    font-size: 60px;
+/* Headings */
+.t1 {
+    font-size: clamp(40px, 5vw, 60px); /* Responsive font size */
 }
 
-.t2 
-{
-    
-    font-size: 70px;
+.t2 {
+    font-size: clamp(50px, 6vw, 70px); /* Responsive font size */
     font-weight: 700;
     color: var(--trd-bg-color);
 }
 
-.desc 
-{
-    font-size: 20px;
+.desc {
+    font-size: clamp(16px, 2vw, 20px);
 }
 
-.cta 
-{
+/* Button */
+.cta {
     padding: 16px 40px;
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 20px);
     margin-top: 35px;
-    background-color:var(--trd-bg-color);
+    background-color: var(--trd-bg-color);
     color: white;
     border: 2px solid var(--trd-bg-color);
     border-radius: 10px;
     cursor: pointer;
-    transition: .2s;
-    
+    transition: 0.2s;
 }
 
-.cta:hover 
-{
+.cta:hover {
     background-color: transparent;
     color: var(--trd-bg-color);
 }
 
-.person 
-{
-    /*background-color: var(--trd-bg-color); */
-    border-radius: 30px;
-    /* align-self: flex-end; */
+/* Image Section */
+.person {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    max-width: 500px;
 }
 
 .person-img {
-    width: 100%; 
-    max-width: 400px; 
-    height: auto; 
+    width: 100%;
+    max-width: 350px;
+    height: auto;
     border-radius: 30px;
     animation: floatImage 4s ease-in-out infinite;
 }
 
+/* Floating Animation */
 @keyframes floatImage {
-    0% {
-        transform: translateY(0);
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5%); }
+    100% { transform: translateY(0); }
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 1024px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
     }
-    50% {
-        transform: translateY(-10%); 
+
+    .details, .person {
+        width: 100%;
+        max-width: 100%;
+        align-items: center;
     }
-    100% {
-        transform: translateY(0);
+
+    .details {
+        align-items: center;
+    }
+
+    .cta {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .t1 {
+        font-size: 36px;
+    }
+    
+    .t2 {
+        font-size: 50px;
+    }
+    
+    .desc {
+        font-size: 18px;
+    }
+
+    .person-img {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .t1 {
+        font-size: 30px;
+    }
+
+    .t2 {
+        font-size: 40px;
+    }
+
+    .desc {
+        font-size: 16px;
+    }
+
+    .cta {
+        font-size: 18px;
+        padding: 12px 30px;
+    }
+
+    .person-img {
+        max-width: 250px;
     }
 }
 
@@ -282,46 +332,37 @@ span{
     width: 100%;
     box-sizing: border-box;
 }
-
-
-
-
-
-
 /*Experiance Section */
-
-
-.experiances 
-{
+.experiances {
     width: 100%;
-    padding: 30px 10%;
-    /* background-color: red; */
-    display: flex;
-    height: 700px;
-    
+    padding: 30px 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(15px, 5vw, 40px); /* Flexible gap based on screen size */
+    justify-content: center;
+    align-items: start;
+    min-height: auto;
 }
 
-
-.section-child 
-{
+.section-child {
     width: 100%;
-    padding: 30px 0px ;
-    /* background-color: white; */
+    padding: 30px 0;
     margin-top: 30px;
-    display: flex;
-    column-gap: 4%;   
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(15px, 5vw, 40px); /* Flexible gap */
+    justify-content: center;
 }
-.section-child h2{
+
+.section-child h2 {
     font-size: 18px;
 }
-.section-child p{
+
+.section-child p {
     font-size: 16px;
 }
 
-.experiance
-{
-    width: 300px;
-    /*background-color: yellow; */
+.experiance {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -330,63 +371,249 @@ span{
     row-gap: 15px;
     box-shadow: 0 0 2px gray;
     border-radius: 10px;
-    height: 350px;   
+    height: 350px;
     transition: .3s;
 }
 
-.experiance:hover{
+.experiance:hover {
     transform: scale(1.07);
     box-shadow: 0 0 5px var(--main-color);
 }
 
-.icon 
-{
+.icon {
     padding: 50px;
     font-size: 70px;
     align-self: center;
     color: gray;
 }
 
-.service-text 
-{
+.service-text {
     font-size: 15px;
-    
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .experiances {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: clamp(10px, 3vw, 30px);
+    }
+
+    .section-child {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: clamp(10px, 3vw, 30px);
+    }
+
+    .experiance {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        height: auto;
+    }
+
+    .icon {
+        font-size: 50px;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .experiances {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .section-child {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .experiance {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .icon {
+        font-size: 40px;
+        padding: 20px;
+    }
+
+    .service-text {
+        font-size: 14px;
+    }
+}
+
+/* Certifications*/
+.certifications {
+    width: 100%;
+    padding: 50px 10%;
+    text-align: center;
+    background-color: var(--bg-color);
+}
+
+.section-title {
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--main-color);
+    margin-bottom: 30px;
+}
+
+/* Certifications Grid */
+.certifications-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Certification Card */
+.certificate {
+    background: var(--snd-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.certificate:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.certificate img {
+    width: 100%;
+    max-width: 250px;
+    max-height: 230px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.certificate h3 {
+    font-size: 20px;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.certificate p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+    .certifications-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .certificate {
+        max-width: 300px;
+        margin: auto;
+    }
+}
+
+
 
 /* Resume */
-.resume-div{
-    margin-top: 40px;
-}
-.resume{
+
+/* Resume Section */
+.resume {
     width: 100%;
-    padding: 30px 10%;
-    /* background-color: red; */
+    padding: 50px 10%;
     display: flex;
-    height: 700px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.resume-img{
-    width: 53%;
-    background-color: rebeccapurple;
-    margin-top: 10%;
-    border-radius: 15px;
-    transition: .4s;
+/* Section Title */
+.section-title {
+    font-size: 40px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-.resume-img:hover{
-    transform: scale(1.04);
-    box-shadow: 0 0 5px var(--main-color);
+/* Grid for Text & Image */
+.resume-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    align-items: center;
+    gap: 50px; /* Space between text and image */
 }
-.resume-txt{
-    margin-top: 10%;
-    width: 40%;
-    padding: 10px;
-    /* background-color: white; */
-    font-family: 'Montserrat', sans-serif;
+
+/* Resume Text */
+.resume-txt {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    font-family: 'Montserrat', sans-serif;
     row-gap: 15px;
+}
+
+/* Resume Image */
+.resume-img {
+    width: 100%;
+    max-width: 450px; /* Ensures it doesn't get too large */
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+.resume-img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 5px var(--main-color);
+}
+
+/* Button */
+.cta {
+    padding: 16px 40px;
+    font-size: 20px;
+    margin-top: 20px;
+    background-color: var(--trd-bg-color);
+    color: white;
+    border: 2px solid var(--trd-bg-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cta:hover {
+    background-color: transparent;
+    color: var(--trd-bg-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .resume-container {
+        grid-template-columns: 1fr; /* Stack items on small screens */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .resume-txt {
+        align-items: center;
+    }
+
+    .resume-img {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .resume-img {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .resume-txt {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .resume-img {
+        width: 100%;
+    }
 }
 
 /* Contact */
